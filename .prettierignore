@@ -1,0 +1,9 @@
+node_modules
+dist
+*.zip
+pnpm-lock.yaml
+*.js
+**/*.js
+*.svg
+**/*.svg
+

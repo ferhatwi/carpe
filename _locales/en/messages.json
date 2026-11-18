@@ -1,0 +1,434 @@
+{
+  "extName": {
+    "message": "Carpe - Clip Vault for YouTube",
+    "description": "Extension name shown in Chrome Web Store and extension manager"
+  },
+  "extDescription": {
+    "message": "Frame-accurate YouTube clip vault. Save and replay moments right in the player. No video downloads. Local-first with Chrome Sync.",
+    "description": "Short extension description shown in Chrome Web Store and extension manager"
+  },
+  "ariaOpenNavMenu": {
+    "message": "Expand navigation menu",
+    "description": "ARIA label for expanding the collapsed sidebar navigation"
+  },
+  "ariaCloseNavMenu": {
+    "message": "Collapse navigation menu",
+    "description": "ARIA label for collapsing the expanded sidebar navigation"
+  },
+  "ariaMainNav": {
+    "message": "Main Navigation",
+    "description": "ARIA label for the sidebar navigation landmark"
+  },
+  "navClips": {
+    "message": "Clips",
+    "description": "Sidebar navigation link label for the Clip Library page"
+  },
+  "navSettings": {
+    "message": "Settings",
+    "description": "Sidebar navigation link label for the Settings page"
+  },
+  "libraryPageTitle": {
+    "message": "Carpe - Clip Vault for YouTube",
+    "description": "Document title for the Clip Library page"
+  },
+  "libraryHeading": {
+    "message": "Clip Library",
+    "description": "Main heading on the Clip Library page"
+  },
+  "emptyLibrary": {
+    "message": "No clips saved yet. Create one from a YouTube watch page.",
+    "description": "Empty state message shown when no clips are saved"
+  },
+  "syncBannerTitle": {
+    "message": "Sync limit reached.",
+    "description": "Bold heading in the sync quota warning banner"
+  },
+  "syncBannerBody": {
+    "message": "New clips are saved safely on this device, but won't sync to other computers.",
+    "description": "Body text in the sync quota warning banner"
+  },
+  "bannerManageSync": {
+    "message": "Manage Sync",
+    "description": "Primary action button in the sync quota warning banner"
+  },
+  "ariaDismissBanner": {
+    "message": "Dismiss banner",
+    "description": "ARIA label for closing the sync quota warning banner"
+  },
+  "clipThumbnailAlt": {
+    "message": "Clip thumbnail",
+    "description": "Default alt text for a clip thumbnail image"
+  },
+  "localOnlyBadge": {
+    "message": "Local only",
+    "description": "Badge text on library clip cards that are not synced to cloud"
+  },
+  "localOnlyTooltip": {
+    "message": "Local only - Not synced to cloud",
+    "description": "Tooltip and ARIA label for the local-only badge on library cards"
+  },
+  "deleteClipLabel": {
+    "message": "Delete clip",
+    "description": "Tooltip and ARIA label for the delete button on a library clip card"
+  },
+  "deleteClipConfirm": {
+    "message": "Delete “$TITLE$”?",
+    "description": "Confirmation prompt before deleting a clip from the library",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Chorus"
+      }
+    }
+  },
+  "openClipAria": {
+    "message": "Open “$TITLE$”",
+    "description": "ARIA label for the card trigger button that opens a saved clip on YouTube",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Chorus"
+      }
+    }
+  },
+  "untitledClip": {
+    "message": "Untitled clip",
+    "description": "Fallback title displayed when a clip has no title"
+  },
+  "defaultVideoTitle": {
+    "message": "YouTube video",
+    "description": "Fallback video title displayed when a clip has no video title"
+  },
+  "settingsPageTitle": {
+    "message": "Settings - Carpe",
+    "description": "Document title for the Settings page"
+  },
+  "settingsHeading": {
+    "message": "Settings",
+    "description": "Main heading on the Settings page"
+  },
+  "cloudSyncHeading": {
+    "message": "Cloud Sync",
+    "description": "Section heading for Chrome Sync settings"
+  },
+  "cloudSyncDesc": {
+    "message": "Synchronizes clips across Chrome browsers signed into your Google account using Chrome Sync (up to ~250 clips). All clips are always saved locally first.",
+    "description": "Description explaining how Chrome Sync works"
+  },
+  "cloudSyncAccountNote": {
+    "message": "Cross-device sync requires Chrome Sync with Extensions enabled in your Google account.",
+    "description": "Note explaining browser sync account requirement"
+  },
+  "enableSyncLabel": {
+    "message": "Enable Chrome Sync",
+    "description": "Toggle label for enabling or disabling Chrome Sync"
+  },
+  "enableSyncSubtext": {
+    "message": "Keep clips synchronized between your devices",
+    "description": "Subtext under the Chrome Sync toggle"
+  },
+  "statLocalClips": {
+    "message": "Local Clips",
+    "description": "Stat label showing number of locally stored clips"
+  },
+  "statCloudSynced": {
+    "message": "Cloud Synced",
+    "description": "Stat label showing number of clips in Chrome Sync"
+  },
+  "statSyncStatus": {
+    "message": "Sync Status",
+    "description": "Stat label showing current Chrome Sync state"
+  },
+  "syncStateActive": {
+    "message": "Active",
+    "description": "Status pill text when Chrome Sync is active"
+  },
+  "syncStateHealthy": {
+    "message": "Healthy",
+    "description": "Stat value text when Chrome Sync is healthy"
+  },
+  "syncStatePartial": {
+    "message": "Partial",
+    "description": "Status pill text when sync works within buffer cap and older clips remain local-only"
+  },
+  "syncStatePartialCount": {
+    "message": "$COUNT$ local-only",
+    "description": "Stat value text showing how many clips remain local-only in partial sync state",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "12 clips"
+      }
+    }
+  },
+  "syncStateDisabled": {
+    "message": "Disabled",
+    "description": "Status text when Chrome Sync is disabled"
+  },
+  "syncStateQuotaFull": {
+    "message": "Quota Full",
+    "description": "Status text when Chrome Sync quota is exceeded"
+  },
+  "syncStateError": {
+    "message": "Error",
+    "description": "Status text when Chrome Sync has an error"
+  },
+  "archiveBoxHeading": {
+    "message": "Cloud Storage Management",
+    "description": "Heading for the archive older clips box in Settings"
+  },
+  "archiveBoxDesc": {
+    "message": "If cloud storage reaches capacity, you can archive older clips from Chrome Sync to free up space. All archived clips stay 100% intact on this computer.",
+    "description": "Explanation of archiving older clips from Chrome Sync"
+  },
+  "archiveBtn": {
+    "message": "Archive Oldest Clips from Cloud",
+    "description": "Button label to archive older clips from Chrome Sync"
+  },
+  "archiveBtnCount": {
+    "message": "Archive Oldest $COUNT$",
+    "description": "Dynamic button label showing how many oldest clips will be archived from Chrome Sync",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50 clips"
+      }
+    }
+  },
+  "backupHeading": {
+    "message": "Backup & Data Export",
+    "description": "Section heading for JSON/Markdown export and import"
+  },
+  "backupDesc": {
+    "message": "Download your entire clip library as a JSON file or Markdown notes, or restore from a previous backup.",
+    "description": "Description of the Backup & Data Export section"
+  },
+  "exportJsonBtn": {
+    "message": "Export JSON (Full Backup)",
+    "description": "Button label to export clips as JSON"
+  },
+  "exportMdBtn": {
+    "message": "Export Markdown (Notes)",
+    "description": "Button label to export clips as Markdown"
+  },
+  "importJsonBtn": {
+    "message": "Import JSON Backup",
+    "description": "Button label to import a JSON backup"
+  },
+  "clipCountOne": {
+    "message": "$COUNT$ clip",
+    "description": "Singular formatted clip count",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "clipCountOther": {
+    "message": "$COUNT$ clips",
+    "description": "Plural formatted clip count",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "archiveConfirm": {
+    "message": "Archive the oldest $COUNT$ from Cloud Sync? All clips remain 100% safe on this device.",
+    "description": "Confirmation prompt before archiving oldest clips from Chrome Sync",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50 clips"
+      }
+    }
+  },
+  "archiveSuccess": {
+    "message": "Archived $REMOVED$ from cloud. Remaining in cloud sync: $REMAINING$.",
+    "description": "Alert shown after archiving older clips from Chrome Sync",
+    "placeholders": {
+      "removed": {
+        "content": "$1",
+        "example": "12 clips"
+      },
+      "remaining": {
+        "content": "$2",
+        "example": "100 clips"
+      }
+    }
+  },
+  "archiveFailed": {
+    "message": "Archive failed: $ERROR$",
+    "description": "Alert shown when archiving older clips from Chrome Sync fails",
+    "placeholders": {
+      "error": {
+        "content": "$1",
+        "example": "Sync storage unavailable"
+      }
+    }
+  },
+  "importSuccess": {
+    "message": "Import complete! Added or updated: $IMPORTED$. Total library: $TOTAL$.",
+    "description": "Alert shown after importing a JSON backup",
+    "placeholders": {
+      "imported": {
+        "content": "$1",
+        "example": "8 clips"
+      },
+      "total": {
+        "content": "$2",
+        "example": "24 clips"
+      }
+    }
+  },
+  "importFailed": {
+    "message": "Import failed: $ERROR$",
+    "description": "Alert shown when JSON backup import fails",
+    "placeholders": {
+      "error": {
+        "content": "$1",
+        "example": "Invalid JSON file format"
+      }
+    }
+  },
+  "importErrInvalidJson": {
+    "message": "Invalid JSON file format",
+    "description": "Error message when imported file is not valid JSON"
+  },
+  "importErrMissingClipsArray": {
+    "message": "JSON does not contain a recognized clips array",
+    "description": "Error message when JSON does not contain a clips array"
+  },
+  "importErrNoValidClips": {
+    "message": "No valid clips found in the imported file",
+    "description": "Error message when no valid clip items are present in the JSON"
+  },
+  "importErrReadFile": {
+    "message": "Unable to read the selected file",
+    "description": "Error message when the browser fails to read the selected backup file"
+  },
+  "overlayClipsGroupAria": {
+    "message": "Clips in this video",
+    "description": "ARIA label for the clip shelf container on the YouTube player"
+  },
+  "createClipAria": {
+    "message": "Create clip",
+    "description": "ARIA label for the scissors button to start creating a clip"
+  },
+  "editClipAria": {
+    "message": "Edit clip",
+    "description": "ARIA label for the button to edit the active clip"
+  },
+  "deleteClipAria": {
+    "message": "Delete clip",
+    "description": "ARIA label for the button to delete the active clip"
+  },
+  "clipTitleInputAria": {
+    "message": "Clip title (optional)",
+    "description": "ARIA label for the clip title input in the YouTube player controls"
+  },
+  "clipTitlePlaceholder": {
+    "message": "Clip title",
+    "description": "Placeholder text for the clip title input in the YouTube player controls"
+  },
+  "saveClipAria": {
+    "message": "Save clip",
+    "description": "ARIA label for the save clip button in the YouTube player controls"
+  },
+  "cancelClipAria": {
+    "message": "Cancel clip",
+    "description": "ARIA label for the cancel clip button in the YouTube player controls"
+  },
+  "startTimeAria": {
+    "message": "Set or adjust start time",
+    "description": "ARIA label for the start time button in the clip trimmer"
+  },
+  "endTimeAria": {
+    "message": "Set or adjust end time",
+    "description": "ARIA label for the end time button in the clip trimmer"
+  },
+  "shelfLocalOnlyTooltip": {
+    "message": "Local only (Not synced to cloud)",
+    "description": "Tooltip on the cloud-alert icon in the YouTube player clip shelf"
+  },
+  "toastAdsPlayBlocked": {
+    "message": "Cannot play clips during ads",
+    "description": "Toast shown if user clicks a clip while an ad is playing"
+  },
+  "toastAdsClipBlocked": {
+    "message": "Cannot clip during ads",
+    "description": "Toast shown if user tries to create or save a clip during an ad"
+  },
+  "toastAdsEditBlocked": {
+    "message": "Cannot edit clips during ads",
+    "description": "Toast shown if user tries to edit a clip during an ad"
+  },
+  "toastClipDeleted": {
+    "message": "Deleted clip",
+    "description": "Toast shown after deleting a clip from the player overlay"
+  },
+  "toastSavedLocalSyncFull": {
+    "message": "Saved locally (Sync full • Opening Library)",
+    "description": "Toast shown the first time a clip is saved locally after Chrome Sync quota is full"
+  },
+  "toastSavedLocalSyncFullBrief": {
+    "message": "Saved locally (Cloud Sync full)",
+    "description": "Toast shown on subsequent local saves while Chrome Sync quota remains full"
+  },
+  "toastVideoNotReady": {
+    "message": "Wait for the video to finish loading",
+    "description": "Toast shown when clicking Create Clip before video duration is available or on live streams"
+  },
+  "toastClipUpdatedWithTitle": {
+    "message": "Updated “$TITLE$”",
+    "description": "Toast shown after updating a clip with a title",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Chorus"
+      }
+    }
+  },
+  "toastClipUpdated": {
+    "message": "Updated clip",
+    "description": "Toast shown after updating an untitled clip"
+  },
+  "toastClipSavedWithTitle": {
+    "message": "Saved “$TITLE$”",
+    "description": "Toast shown after saving a new clip with a title",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Chorus"
+      }
+    }
+  },
+  "toastClipSaved": {
+    "message": "Saved clip",
+    "description": "Toast shown after saving a new untitled clip"
+  },
+  "mdExportHeading": {
+    "message": "Carpe - YouTube Clips Export",
+    "description": "Top-level heading in exported Markdown notes"
+  },
+  "mdExportSummary": {
+    "message": "Exported on $DATE$ - $CLIPS$",
+    "description": "Subtitle line in exported Markdown notes",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "11/10/2026"
+      },
+      "clips": {
+        "content": "$2",
+        "example": "12 clips"
+      }
+    }
+  },
+  "mdDefaultVideoTitle": {
+    "message": "YouTube",
+    "description": "Fallback video title used inside exported Markdown notes"
+  }
+}

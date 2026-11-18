@@ -1,0 +1,203 @@
+/* ==========================================================================
+   CLIP GRID & CARDS
+   ========================================================================== */
+
+.clip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+/* Expanding ambient envelope on hover matching YouTube desktop design */
+.clip-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    background: oklch(var(--envelope-l) 0.02 var(--card-h));
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transition:
+        inset 0.25s ease-in-out,
+        opacity 0.25s ease-in-out;
+}
+
+.clip-card:hover,
+.clip-card:focus-within {
+    z-index: 10;
+    background: transparent;
+}
+
+.clip-card:hover::before,
+.clip-card:focus-within::before {
+    inset: -0.5rem;
+    border-radius: 1rem;
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.clip-card {
+    --card-h: 0deg;
+    --envelope-l: 96%;
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    margin: 0;
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: start;
+    color: inherit;
+    cursor: pointer;
+}
+
+.clip-trigger {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    outline: none;
+    transition:
+        inset 0.25s ease-in-out,
+        border-radius 0.25s ease-in-out;
+}
+
+.clip-card:hover .clip-trigger,
+.clip-card:focus-within .clip-trigger {
+    inset: -0.5rem;
+    border-radius: 1rem;
+}
+
+.clip-trigger:focus-visible {
+    outline: 2px solid var(--on-background);
+    outline-offset: 0.5rem;
+}
+
+.clip-thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.clip-thumbnail {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #000;
+}
+
+.clip-sync-badge {
+    position: absolute;
+    top: 0.5rem;
+    inset-inline-end: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.clip-sync-badge[hidden] {
+    display: none !important;
+}
+
+.clip-sync-badge-icon {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.clip-sync-badge-text {
+    letter-spacing: 0.02em;
+}
+
+.clip-body {
+    padding: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.clip-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--on-background-bright);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.clip-video-title {
+    margin: 0.25rem 0 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.75;
+}
+
+.clip-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.25rem;
+}
+
+.clip-range {
+    font-size: 1rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.clip-delete {
+    position: relative;
+    z-index: 2;
+    transition:
+        background-color 0.25s ease-in-out,
+        color 0.25s ease-in-out;
+}
+
+.clip-delete:hover {
+    background-color: var(--error-container) !important;
+    color: var(--on-error-container);
+}
+
+.empty-state {
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    grid-column: 1 / -1;
+    font-size: 1rem;
+    opacity: 0.75;
+}
+
+@media (prefers-color-scheme: dark) {
+    .clip-card {
+        --envelope-l: 25%;
+    }
+}

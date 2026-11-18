@@ -1,0 +1,90 @@
+/* ==========================================================================
+   RESPONSIVE NAVIGATION (MOBILE BOTTOM BAR & COLLAPSIBLE DESKTOP RAIL)
+   ========================================================================== */
+
+nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    inset-inline: 0;
+    height: var(--bottombar-height);
+    background-color: var(--background);
+    z-index: 101;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 16px;
+    text-decoration: none;
+    color: currentColor;
+    line-height: 24px;
+}
+
+.nav-item.active {
+    font-weight: 800;
+}
+
+/* Tablet & Desktop Navigation Rail */
+@media (min-width: 768px) {
+    nav {
+        flex-direction: column;
+        inset-inline-start: 0;
+        inset-inline-end: auto;
+        top: var(--toolbar-height);
+        bottom: 0;
+        height: calc(100vh - var(--toolbar-height));
+        width: var(--nav-width);
+        padding-inline: 0.5rem;
+        overflow-y: auto;
+        scrollbar-color: transparent transparent;
+        scrollbar-width: thin;
+    }
+
+    nav:hover {
+        scrollbar-color: auto;
+    }
+
+    .nav-item {
+        gap: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        flex-direction: row;
+        flex-grow: 0;
+        justify-content: flex-start;
+        border-radius: 100vh;
+    }
+
+    .nav-item.active {
+        background-color: var(--elevation-light);
+    }
+
+    .nav-item.active:hover {
+        background-color: var(--elevation);
+    }
+
+    .nav-collapsed nav {
+        overflow-y: hidden;
+        padding-inline: 0.25rem;
+    }
+
+    .nav-collapsed .nav-item {
+        flex-direction: column;
+        gap: 0;
+        border-radius: 1rem;
+        padding: 1rem 0.25rem;
+    }
+
+    .nav-collapsed .nav-item .nav-label {
+        font-size: 0.65rem;
+        font-weight: 500;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

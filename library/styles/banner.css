@@ -1,0 +1,32 @@
+/* ==========================================================================
+   SYNC QUOTA BANNER (WARNING)
+   ========================================================================== */
+
+.sync-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: var(--sync-warning-background);
+    color: var(--sync-warning);
+}
+
+.sync-banner[hidden] {
+    display: none !important;
+}
+
+.sync-banner strong {
+    margin-inline-end: 0.25rem;
+}
+
+.sync-banner-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#banner-dismiss-btn {
+    margin-inline-start: auto;
+}

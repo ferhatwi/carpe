@@ -1,0 +1,350 @@
+{
+  "extName": {
+    "message": "Carpe - YouTube için Klip Arşivi"
+  },
+  "extDescription": {
+    "message": "Kare hassasiyetinde YouTube klip arşivi. Anları doğrudan oynatıcı üzerinde kaydedin ve tekrar oynatın. Video indirme gerektirmez. Chrome Senkronizasyonu ile önce yerel."
+  },
+  "ariaOpenNavMenu": {
+    "message": "Gezinme menüsünü genişlet"
+  },
+  "ariaCloseNavMenu": {
+    "message": "Gezinme menüsünü daralt"
+  },
+  "ariaMainNav": {
+    "message": "Ana Gezinme"
+  },
+  "navClips": {
+    "message": "Klipler"
+  },
+  "navSettings": {
+    "message": "Ayarlar"
+  },
+  "libraryPageTitle": {
+    "message": "Carpe - YouTube için Klip Arşivi"
+  },
+  "libraryHeading": {
+    "message": "Klip Kitaplığı"
+  },
+  "emptyLibrary": {
+    "message": "Henüz kayıtlı klip yok. Bir YouTube video izleme sayfasından oluşturabilirsiniz."
+  },
+  "syncBannerTitle": {
+    "message": "Senkronizasyon sınırına ulaşıldı."
+  },
+  "syncBannerBody": {
+    "message": "Yeni klipler bu cihazda güvenle saklanır, ancak diğer bilgisayarlarla senkronize edilmez."
+  },
+  "bannerManageSync": {
+    "message": "Senkronizasyonu Yönet"
+  },
+  "ariaDismissBanner": {
+    "message": "Bildirimi kapat"
+  },
+  "clipThumbnailAlt": {
+    "message": "Klip küçük resmi"
+  },
+  "localOnlyBadge": {
+    "message": "Yalnızca yerel"
+  },
+  "localOnlyTooltip": {
+    "message": "Yalnızca yerel - Buluta senkronize edilmedi"
+  },
+  "deleteClipLabel": {
+    "message": "Klibi sil"
+  },
+  "deleteClipConfirm": {
+    "message": "“$TITLE$” silinsin mi?",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Nakarat"
+      }
+    }
+  },
+  "openClipAria": {
+    "message": "“$TITLE$” klibini aç",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Nakarat"
+      }
+    }
+  },
+  "untitledClip": {
+    "message": "Adsız klip"
+  },
+  "defaultVideoTitle": {
+    "message": "YouTube videosu"
+  },
+  "settingsPageTitle": {
+    "message": "Ayarlar - Carpe"
+  },
+  "settingsHeading": {
+    "message": "Ayarlar"
+  },
+  "cloudSyncHeading": {
+    "message": "Bulut Senkronizasyonu"
+  },
+  "cloudSyncDesc": {
+    "message": "Chrome Senkronizasyonu ile Google hesabınızda oturum açmış Chrome tarayıcıları arasında klipleri eşitler (~250 klibe kadar). Tüm klipler her zaman önce yerel olarak kaydedilir."
+  },
+  "cloudSyncAccountNote": {
+    "message": "Cihazlar arası senkronizasyon için Google hesabınızda Chrome Senkronizasyonu ve Uzantılar senkronizasyonunun açık olması gerekir."
+  },
+  "enableSyncLabel": {
+    "message": "Chrome Senkronizasyonunu Etkinleştir"
+  },
+  "enableSyncSubtext": {
+    "message": "Klipleri cihazlarınız arasında senkronize tutun"
+  },
+  "statLocalClips": {
+    "message": "Yerel Klipler"
+  },
+  "statCloudSynced": {
+    "message": "Bulutta Senkronize"
+  },
+  "statSyncStatus": {
+    "message": "Senkronizasyon Durumu"
+  },
+  "syncStateActive": {
+    "message": "Etkin"
+  },
+  "syncStateHealthy": {
+    "message": "Sağlıklı"
+  },
+  "syncStatePartial": {
+    "message": "Kısmi"
+  },
+  "syncStatePartialCount": {
+    "message": "$COUNT$ yalnızca yerel",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "12 klip"
+      }
+    }
+  },
+  "syncStateDisabled": {
+    "message": "Devre Dışı"
+  },
+  "syncStateQuotaFull": {
+    "message": "Kota Dolu"
+  },
+  "syncStateError": {
+    "message": "Hata"
+  },
+  "archiveBoxHeading": {
+    "message": "Bulut Depolama Yönetimi"
+  },
+  "archiveBoxDesc": {
+    "message": "Bulut depolama kapasitesi dolarsa yer açmak için eski klipleri Chrome Senkronizasyonundan arşivleyebilirsiniz. Arşivlenen tüm klipler bu bilgisayarda %100 korunur."
+  },
+  "archiveBtn": {
+    "message": "En Eski Klipleri Buluttan Arşivle"
+  },
+  "archiveBtnCount": {
+    "message": "Eski Klipleri Arşivle (En Eski $COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50 klip"
+      }
+    }
+  },
+  "backupHeading": {
+    "message": "Yedekleme ve Veri Dışa Aktarma"
+  },
+  "backupDesc": {
+    "message": "Tüm klip kitaplığınızı JSON dosyası veya Markdown notları olarak indirin ya da önceki bir yedekten geri yükleyin."
+  },
+  "exportJsonBtn": {
+    "message": "JSON Dışa Aktar (Tam Yedek)"
+  },
+  "exportMdBtn": {
+    "message": "Markdown Dışa Aktar (Notlar)"
+  },
+  "importJsonBtn": {
+    "message": "JSON Yedeği İçe Aktar"
+  },
+  "clipCountOne": {
+    "message": "$COUNT$ klip",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "clipCountOther": {
+    "message": "$COUNT$ klip",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "archiveConfirm": {
+    "message": "Bulut Senkronizasyonundan en eski $COUNT$ arşivlensin mi? Tüm klipler bu cihazda %100 güvende kalır.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50 klip"
+      }
+    }
+  },
+  "archiveSuccess": {
+    "message": "$REMOVED$ buluttan arşivlendi. Bulut senkronizasyonunda kalan: $REMAINING$.",
+    "placeholders": {
+      "removed": {
+        "content": "$1",
+        "example": "12 klip"
+      },
+      "remaining": {
+        "content": "$2",
+        "example": "100 klip"
+      }
+    }
+  },
+  "archiveFailed": {
+    "message": "Arşivleme başarısız: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1",
+        "example": "Senkronizasyon depolaması kullanılamıyor"
+      }
+    }
+  },
+  "importSuccess": {
+    "message": "İçe aktarma tamamlandı! Eklenen veya güncellenen: $IMPORTED$. Toplam kitaplık: $TOTAL$.",
+    "placeholders": {
+      "imported": {
+        "content": "$1",
+        "example": "8 klip"
+      },
+      "total": {
+        "content": "$2",
+        "example": "24 klip"
+      }
+    }
+  },
+  "importFailed": {
+    "message": "İçe aktarma başarısız: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1",
+        "example": "Geçersiz JSON dosya biçimi"
+      }
+    }
+  },
+  "importErrInvalidJson": {
+    "message": "Geçersiz JSON dosya biçimi"
+  },
+  "importErrMissingClipsArray": {
+    "message": "JSON geçerli bir klip dizisi içermiyor"
+  },
+  "importErrNoValidClips": {
+    "message": "İçe aktarılan dosyada geçerli klip bulunamadı"
+  },
+  "importErrReadFile": {
+    "message": "Seçilen dosya okunamadı"
+  },
+  "overlayClipsGroupAria": {
+    "message": "Bu videodaki klipler"
+  },
+  "createClipAria": {
+    "message": "Klip oluştur"
+  },
+  "editClipAria": {
+    "message": "Klibi düzenle"
+  },
+  "deleteClipAria": {
+    "message": "Klibi sil"
+  },
+  "clipTitleInputAria": {
+    "message": "Klip başlığı (isteğe bağlı)"
+  },
+  "clipTitlePlaceholder": {
+    "message": "Klip başlığı"
+  },
+  "saveClipAria": {
+    "message": "Klibi kaydet"
+  },
+  "cancelClipAria": {
+    "message": "Klibi iptal et"
+  },
+  "startTimeAria": {
+    "message": "Başlangıç zamanını ayarla veya düzenle"
+  },
+  "endTimeAria": {
+    "message": "Bitiş zamanını ayarla veya düzenle"
+  },
+  "shelfLocalOnlyTooltip": {
+    "message": "Yalnızca yerel (Buluta senkronize edilmedi)"
+  },
+  "toastAdsPlayBlocked": {
+    "message": "Reklamlar sırasında klipler oynatılamaz"
+  },
+  "toastAdsClipBlocked": {
+    "message": "Reklamlar sırasında klip oluşturulamaz"
+  },
+  "toastAdsEditBlocked": {
+    "message": "Reklamlar sırasında klipler düzenlenemez"
+  },
+  "toastClipDeleted": {
+    "message": "Klip silindi"
+  },
+  "toastSavedLocalSyncFull": {
+    "message": "Yerel olarak kaydedildi (Senkronizasyon dolu • Kitaplık açılıyor)"
+  },
+  "toastSavedLocalSyncFullBrief": {
+    "message": "Yerel olarak kaydedildi (Bulut senkronizasyonu dolu)"
+  },
+  "toastVideoNotReady": {
+    "message": "Videonun yüklenmesini bekleyin"
+  },
+  "toastClipUpdatedWithTitle": {
+    "message": "“$TITLE$” güncellendi",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Nakarat"
+      }
+    }
+  },
+  "toastClipUpdated": {
+    "message": "Klip güncellendi"
+  },
+  "toastClipSavedWithTitle": {
+    "message": "“$TITLE$” kaydedildi",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Nakarat"
+      }
+    }
+  },
+  "toastClipSaved": {
+    "message": "Klip kaydedildi"
+  },
+  "mdExportHeading": {
+    "message": "Carpe - YouTube Klipleri Dışa Aktarımı"
+  },
+  "mdExportSummary": {
+    "message": "Dışa aktarma tarihi: $DATE$ - $CLIPS$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "10.11.2026"
+      },
+      "clips": {
+        "content": "$2",
+        "example": "12 klip"
+      }
+    }
+  },
+  "mdDefaultVideoTitle": {
+    "message": "YouTube"
+  }
+}

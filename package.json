@@ -1,0 +1,52 @@
+{
+  "name": "carpe",
+  "version": "1.0.0",
+  "description": "Frame-accurate YouTube clip vault. Save and replay moments right in the player. No video downloads. Local-first with Chrome Sync.",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferhatwi/carpe.git"
+  },
+  "homepage": "https://github.com/ferhatwi/carpe#readme",
+  "bugs": {
+    "url": "https://github.com/ferhatwi/carpe/issues"
+  },
+  "keywords": [
+    "youtube",
+    "chrome-extension",
+    "video-clips",
+    "frame-accurate",
+    "local-first",
+    "chrome-sync",
+    "bookmarks"
+  ],
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --experimental-strip-types --import ./tests/helpers/register.mts --test \"tests/*.test.mts\"",
+    "build": "node build.mjs",
+    "check": "pnpm type-check && pnpm lint && pnpm format:check && pnpm test && pnpm build",
+    "release": "pnpm check && node release.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.4",
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.1.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2"
+  }
+}

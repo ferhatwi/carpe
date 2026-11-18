@@ -1,0 +1,228 @@
+/* ==========================================================================
+   SETTINGS VIEW
+   Mobile-first: single column stats and stacked controls
+   Desktop override: 3-column stats grid (@media min-width: 768px)
+   ========================================================================== */
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title-row h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--on-background-bright);
+}
+
+.status-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 100vh;
+}
+
+.status-pill.healthy {
+    background: var(--sync-healthy-background);
+    color: var(--sync-healthy);
+}
+
+.status-pill.partial {
+    background: var(--sync-partial-background);
+    color: var(--sync-partial);
+}
+
+.status-pill.warning {
+    background: var(--sync-warning-background);
+    color: var(--sync-warning);
+}
+
+.status-pill.error {
+    background: var(--error-container);
+    color: var(--on-error-container);
+}
+
+.status-pill.disabled {
+    background: var(--sync-disabled-background);
+    color: var(--sync-disabled);
+}
+
+.section-desc {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+.section-note {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.65;
+    line-height: 1.4;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.setting-label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--on-background-bright);
+}
+
+.setting-subtext {
+    font-size: 1rem;
+    opacity: 0.75;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch input:focus-visible + .slider {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: var(--switch-off);
+    transition: 0.25s ease-in-out;
+    border-radius: 100vh;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ffffff;
+    transition: 0.25s ease-in-out;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #10b981;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Stats Box (Mobile Default: 1 column) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.stat-item {
+    background: var(--elevation-light);
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--on-background-bright);
+}
+
+.sync-error-detail {
+    margin: 0;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    background: var(--error-container);
+    color: var(--on-error-container);
+}
+
+.archive-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.archive-box > p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.backup-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.settings-feedback {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    background: var(--elevation-light);
+    color: var(--on-background-bright);
+    border: 1px solid var(--border);
+}
+
+.settings-feedback.error {
+    background: var(--error-container);
+    color: var(--on-error-container);
+    border-color: transparent;
+}
+
+.settings-feedback.success {
+    background: var(--sync-healthy-background);
+    color: var(--sync-healthy);
+    border-color: transparent;
+}
+
+/* Desktop Override */
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

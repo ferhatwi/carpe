@@ -1,0 +1,75 @@
+/* ==========================================================================
+   APP LAYOUT & RESPONSIVE CANVAS
+   ========================================================================== */
+
+body {
+    padding-top: var(--toolbar-height);
+    padding-bottom: var(--bottombar-height);
+}
+
+/* Fixed Top Header Bar (visually sticky without pre-mount shift) */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--toolbar-height);
+    background-color: var(--background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--on-background-bright);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+main {
+    margin: 0 1rem 1rem;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--on-background-bright);
+}
+
+/* Tablet & Desktop Overrides */
+@media (min-width: 768px) {
+    body {
+        padding-bottom: 0;
+    }
+
+    #sidebar-toggle {
+        display: inline-flex;
+    }
+
+    main {
+        margin-inline-start: calc(var(--nav-width) + 0.5rem);
+        margin-inline-end: 1rem;
+        padding-inline-start: 1rem;
+        padding-bottom: 1rem;
+    }
+}

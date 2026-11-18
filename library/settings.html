@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Carpe</title>
+    <link rel="stylesheet" href="library.css" />
+    <script src="nav-init.js"></script>
+  </head>
+  <body>
+    <!-- MAIN CONTENT AREA (header & nav mounted by mountAppShell) -->
+    <main>
+      <h1 data-i18n="settingsHeading">Settings</h1>
+      <div id="settings-feedback" class="settings-feedback" role="status" aria-live="polite" hidden></div>
+      <!-- Section: Cloud Sync -->
+      <section class="settings-section">
+        <div class="section-title-row">
+          <h2 data-i18n="cloudSyncHeading">Cloud Sync</h2>
+          <span id="settings-sync-badge" class="status-pill" data-i18n="syncStateActive">Active</span>
+        </div>
+        <p class="section-desc" data-i18n="cloudSyncDesc">
+          Synchronizes clips across Chrome browsers signed into your Google account using Chrome Sync (up to ~250
+          clips). All clips are always saved locally first.
+        </p>
+        <p class="section-note" data-i18n="cloudSyncAccountNote">
+          Cross-device sync requires Chrome Sync with Extensions enabled in your Google account.
+        </p>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span id="enable-sync-label" class="setting-label" data-i18n="enableSyncLabel">Enable Chrome Sync</span>
+            <span class="setting-subtext" data-i18n="enableSyncSubtext">
+              Keep clips synchronized between your devices
+            </span>
+          </div>
+          <label class="switch">
+            <input id="sync-toggle-checkbox" type="checkbox" aria-labelledby="enable-sync-label" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-label" data-i18n="statLocalClips">Local Clips</span>
+            <span id="stat-local-count" class="stat-value">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label" data-i18n="statCloudSynced">Cloud Synced</span>
+            <span id="stat-sync-count" class="stat-value">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label" data-i18n="statSyncStatus">Sync Status</span>
+            <span id="stat-sync-state" class="stat-value" data-i18n="syncStateHealthy">Healthy</span>
+          </div>
+        </div>
+        <p id="sync-error-detail" class="sync-error-detail" hidden></p>
+
+        <div id="archive-box" class="archive-box" hidden>
+          <div class="archive-header">
+            <strong data-i18n="archiveBoxHeading">Cloud Storage Management</strong>
+          </div>
+          <p data-i18n="archiveBoxDesc">
+            If cloud storage reaches capacity, you can archive older clips from Chrome Sync to free up space. All
+            archived clips stay 100% intact on this computer.
+          </p>
+          <button id="archive-sync-btn" class="btn-danger" type="button" data-i18n="archiveBtn">
+            Archive Oldest Clips from Cloud
+          </button>
+        </div>
+      </section>
+
+      <!-- Section: Backup & Restore -->
+      <section class="settings-section">
+        <div class="section-title-row">
+          <h2 data-i18n="backupHeading">Backup & Data Export</h2>
+        </div>
+        <p class="section-desc" data-i18n="backupDesc">
+          Download your entire clip library as a JSON file or Markdown notes, or restore from a previous backup.
+        </p>
+        <div class="backup-actions">
+          <button id="export-json-btn" class="btn-tonal" type="button" data-i18n="exportJsonBtn">
+            Export JSON (Full Backup)
+          </button>
+          <button id="export-md-btn" class="btn-tonal" type="button" data-i18n="exportMdBtn">
+            Export Markdown (Notes)
+          </button>
+          <button id="import-btn" class="btn-tonal" type="button" data-i18n="importJsonBtn">Import JSON Backup</button>
+          <input id="import-file-input" type="file" accept=".json" style="display: none" />
+        </div>
+      </section>
+    </main>
+
+    <script src="settings.js"></script>
+  </body>
+</html>

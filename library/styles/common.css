@@ -1,0 +1,171 @@
+.btn-icon,
+.btn-text,
+.btn-outlined,
+.btn-tonal,
+.btn-emphasized,
+.btn-danger {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.btn-text,
+.btn-outlined,
+.btn-tonal,
+.btn-emphasized,
+.btn-danger {
+    padding: 0.5rem 1rem;
+}
+
+.btn-icon,
+.btn-text {
+    background-color: transparent;
+    color: currentColor;
+}
+
+.btn-icon,
+.btn-icon-danger {
+    padding: 0.5rem;
+}
+
+.btn-outlined {
+    background-color: transparent;
+    color: currentColor;
+    border: 1px solid var(--outline-variant);
+}
+
+.btn-tonal {
+    background-color: var(--elevation-light);
+}
+
+.btn-tonal:hover {
+    background-color: var(--elevation);
+}
+
+.btn-emphasized {
+    background-color: var(--on-background);
+    color: var(--background);
+}
+
+.btn-emphasized:hover {
+    background-color: var(--emphasized-hover);
+}
+
+.btn-emphasized:active {
+    background-color: var(--emphasized-active) !important;
+}
+
+.btn-danger,
+.btn-icon-danger {
+    background-color: var(--error);
+    color: var(--on-error);
+}
+
+.btn-danger:hover,
+.btn-icon-danger:hover {
+    background-color: var(--error-elevated);
+}
+
+.btn-danger:active,
+.btn-icon-danger:active {
+    background-color: var(--error-active) !important;
+}
+
+.btn-icon,
+.btn-icon-danger,
+.btn-text,
+.btn-outlined,
+.btn-tonal,
+.btn-emphasized,
+.btn-danger {
+    font-family:
+        "Roboto",
+        system-ui,
+        -apple-system,
+        sans-serif;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100vh;
+    text-decoration: none;
+    text-wrap: nowrap;
+    line-height: 24px;
+}
+
+.btn-icon,
+.btn-icon-danger,
+.btn-text,
+.btn-tonal,
+.btn-emphasized,
+.btn-danger {
+    border: none;
+}
+
+.btn-icon:hover,
+.btn-text:hover,
+.btn-outlined:hover,
+.nav-item:hover {
+    background-color: var(--elevation-light);
+}
+
+.btn-icon:active,
+.btn-icon-danger:active,
+.btn-text:active,
+.btn-outlined:active,
+.btn-tonal:active,
+.btn-emphasized:active,
+.btn-danger:active,
+.nav-item:active {
+    transition: background-color 0.25s ease-in-out;
+}
+
+.btn-icon:active,
+.btn-text:active,
+.btn-outlined:active,
+.btn-tonal:active,
+.nav-item:active {
+    background-color: var(--active) !important;
+}
+
+button:disabled,
+.btn-icon:disabled,
+.btn-icon-danger:disabled,
+.btn-text:disabled,
+.btn-outlined:disabled,
+.btn-tonal:disabled,
+.btn-emphasized:disabled,
+.btn-danger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    filter: grayscale(1);
+    box-shadow: none !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
+
+button:disabled:hover,
+button:disabled:active {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+.btn-emphasized:disabled {
+    background-color: var(--elevation);
+    color: var(--on-background-variant);
+}
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: var(--icon-url);
+    mask-image: var(--icon-url);
+}
+
+.icon.mono {
+    background-color: currentColor;
+}

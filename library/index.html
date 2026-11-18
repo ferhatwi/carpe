@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carpe - Clip Vault for YouTube</title>
+    <link rel="stylesheet" href="library.css" />
+    <script src="nav-init.js"></script>
+  </head>
+
+  <body>
+    <!-- MAIN CONTENT AREA (header & nav mounted by mountAppShell) -->
+    <main>
+      <h1 data-i18n="libraryHeading">Clip Library</h1>
+
+      <!-- Sync Quota Warning Banner (Hidden by default; ONLY shown when quota is reached) -->
+      <section id="sync-banner" class="sync-banner warning" hidden>
+        <div class="sync-banner-header">
+          <span class="icon mono" style="--icon-url: url(&quot;/icons/cloud_alert_outlined.svg&quot;)"></span>
+
+          <strong data-i18n="syncBannerTitle">Sync limit reached.</strong>
+
+          <button
+            id="banner-dismiss-btn"
+            class="btn-icon"
+            type="button"
+            aria-label="Dismiss banner"
+            data-i18n-attr="aria-label:ariaDismissBanner"
+          >
+            <span class="icon mono" style="--icon-url: url(&quot;/icons/cancel.svg&quot;)"></span>
+          </button>
+        </div>
+
+        <span data-i18n="syncBannerBody">
+          New clips are saved safely on this device, but won't sync to other computers.
+        </span>
+
+        <a href="settings.html" class="btn-text" data-i18n="bannerManageSync">Manage Sync</a>
+      </section>
+
+      <section id="clip-grid" class="clip-grid" aria-live="polite"></section>
+    </main>
+
+    <template id="clip-card-template">
+      <article class="clip-card">
+        <button class="clip-trigger" type="button"></button>
+        <div class="clip-thumbnail-wrapper">
+          <img class="clip-thumbnail" loading="lazy" alt="Clip thumbnail" data-i18n-attr="alt:clipThumbnailAlt" />
+          <span
+            class="clip-sync-badge"
+            title="Local only - Not synced to cloud"
+            aria-label="Local only"
+            data-i18n-attr="title:localOnlyTooltip,aria-label:localOnlyBadge"
+            hidden
+          >
+            <svg class="clip-sync-badge-icon" viewBox="0 -960 960 960" aria-hidden="true" focusable="false">
+              <path
+                d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm0-80h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41Zm220-240Zm28.5 148.5Q520-343 520-360t-11.5-28.5Q497-400 480-400t-28.5 11.5Q440-377 440-360t11.5 28.5Q463-320 480-320t28.5-11.5ZM440-460h80v-180h-80v180Z"
+              />
+            </svg>
+            <span class="clip-sync-badge-text" data-i18n="localOnlyBadge">Local only</span>
+          </span>
+        </div>
+        <div class="clip-body">
+          <h2 class="clip-title"></h2>
+          <p class="clip-video-title"></p>
+          <div class="clip-footer">
+            <div class="clip-range" dir="ltr"></div>
+            <button
+              class="clip-delete btn-icon"
+              type="button"
+              aria-label="Delete clip"
+              title="Delete clip"
+              data-i18n-attr="aria-label:deleteClipLabel,title:deleteClipLabel"
+            >
+              <span class="icon mono" style="--icon-url: url(&quot;/icons/delete.svg&quot;)"></span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="library.js"></script>
+  </body>
+</html>

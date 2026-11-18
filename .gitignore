@@ -1,0 +1,30 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Coverage & build outputs
+/coverage
+/build
+/dist
+*.zip
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & TypeScript caches
+.env*.local
+.env.production
+*.tsbuildinfo
+
+# Compiled JavaScript outputs (generated from TypeScript via build.mjs)
+*.js
+**/*.js
+
+*.code-workspace

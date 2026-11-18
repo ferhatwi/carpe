@@ -1,0 +1,111 @@
+/* ==========================================================================
+   THEME PALETTES: LIGHT DEFAULT, DARK OVERRIDE VIA prefers-color-scheme
+   ========================================================================== */
+
+:root {
+    color-scheme: light;
+    --background: #fff;
+    --border: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.14);
+    --on-background: #000;
+    --on-background-bright: #020617;
+    --hover-overlay: rgba(0, 0, 0, 0.04);
+    --switch-off: #cbd5e1;
+    --nav-width: 200px;
+    --toolbar-height: 64px;
+    --bottombar-height: 64px;
+
+    --error: oklch(0.506 0.1927 27.7);
+    --error-elevated: oklch(0.606 0.1927 27.7);
+    --error-active: oklch(0.756 0.1927 27.7);
+    --on-error: oklch(1 0 0);
+
+    --error-container: oklch(0.918251 0.041771 25.2259);
+    --on-error-container: oklch(0.236 0.0962 27.19);
+    --elevation-light: oklch(0.96 0 0);
+    --elevation: oklch(0.92 0 0);
+    --emphasized-hover: hsl(0 0% 25%);
+    --outline-variant: oklch(0.84 0 0);
+    --on-background-variant: #49454f;
+
+    --sync-disabled: oklch(0.45 0 0);
+    --sync-disabled-background: oklch(0.95 0 0);
+    --sync-warning: oklch(0.45 0.1 75);
+    --sync-warning-background: oklch(0.95 0.1 75);
+    --sync-error: oklch(0.45 0.1 25);
+    --sync-partial: oklch(0.45 0.1 240);
+    --sync-partial-background: oklch(0.95 0.06 240);
+    --sync-healthy: oklch(0.45 0.1 145);
+    --sync-healthy-background: oklch(0.95 0.1 145);
+
+    --active: rgba(128, 128, 128, 0.4);
+    --emphasized-active: hsl(0 0% 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --background: #000;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-strong: rgba(255, 255, 255, 0.16);
+        --on-background: #fff;
+        --on-background-bright: #ffffff;
+        --hover-overlay: rgba(255, 255, 255, 0.05);
+        --switch-off: rgba(255, 255, 255, 0.2);
+
+        --error: oklch(0.8383 0.0891 26.76);
+        --error-elevated: oklch(0.9383 0.0891 26.76);
+        --error-active: oklch(1 0.0891 26.76);
+        --on-error: oklch(0.3275 0.1336 27.32);
+
+        --error-container: oklch(0.417061 0.170153 27.3788);
+        --on-error-container: oklch(0.918251 0.041771 25.2259);
+        --elevation-light: oklch(0.16 0 0);
+        --elevation: oklch(0.22 0 0);
+        --emphasized-hover: hsl(0 0% 75%);
+        --outline-variant: oklch(0.32 0 0);
+        --on-background-variant: #cac4d0;
+
+        --sync-disabled: oklch(0.9 0 0);
+        --sync-disabled-background: oklch(0.25 0 0);
+        --sync-warning: oklch(0.9 0.1 75);
+        --sync-warning-background: oklch(0.25 0.1 75);
+        --sync-error: oklch(0.9 0.1 25);
+        --sync-partial: oklch(0.88 0.08 240);
+        --sync-partial-background: oklch(0.25 0.06 240);
+        --sync-healthy: oklch(0.9 0.1 145);
+        --sync-healthy-background: oklch(0.25 0.1 145);
+    }
+}
+
+.nav-collapsed {
+    --nav-width: 72px;
+}
+
+/* Base Resets */
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--on-background);
+    background-color: var(--background);
+    font-family:
+        "Roboto",
+        system-ui,
+        -apple-system,
+        sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+button,
+input {
+    font: inherit;
+}

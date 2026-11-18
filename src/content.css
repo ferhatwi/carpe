@@ -1,0 +1,406 @@
+/* ==========================================================================
+   1. YouTube Token Aliases & Fallbacks
+   Intentionally piggybacks on YouTube player CSS variables (--yt-delhi-*,
+   --yt-sys-color-baseline-*) on .html5-video-player so injected controls
+   match YouTube's native theme and sizing, with safe fallbacks.
+   ========================================================================== */
+
+.html5-video-player {
+    --carpe-pill-height: var(--yt-delhi-pill-height, 40px);
+    --carpe-bottom-controls-height: var(--yt-delhi-bottom-controls-height, 56px);
+    --carpe-backdrop-filter: var(--yt-frosted-glass-backdrop-filter-override, none);
+    --carpe-overlay-background: var(--yt-sys-color-baseline--overlay-background-medium-light, rgba(0, 0, 0, 0.3));
+    --carpe-overlay-button: var(--yt-sys-color-baseline--overlay-button-secondary, rgba(255, 255, 255, 0.1));
+    --carpe-overlay-tonal-hover: var(--yt-sys-color-baseline--overlay-tonal-hover, rgba(255, 255, 255, 0.2));
+    --carpe-shadow: 0 0 2px #000;
+}
+
+.html5-video-player.ytp-big-mode {
+    --carpe-pill-height: var(--yt-delhi-big-mode-pill-height, 48px);
+    --carpe-bottom-controls-height: var(--yt-delhi-big-mode-bottom-controls-height, 72px);
+}
+
+/* ==========================================================================
+   2. YouTube Native Player Overrides
+   ========================================================================== */
+
+/* Swap out native timestamp while selecting a clip range */
+.html5-video-player.carpe-selecting .ytp-left-controls .ytp-time-display:not(#carpe-time-display) {
+    display: none !important;
+}
+
+/* Hide YouTube's single hover overlay so start/end time buttons hover independently */
+#carpe-time-display .ytp-time-wrapper::after,
+#carpe-time-display .ytp-time-contents::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Keep player controls and background gradient visible while creating or editing a clip */
+.html5-video-player.carpe-focused .ytp-chrome-bottom,
+.html5-video-player.carpe-focused .ytp-gradient-bottom,
+.html5-video-player.carpe-focused .ytp-chrome-top,
+.html5-video-player.carpe-focused .ytp-gradient-top {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Prevent YouTube from hiding the cursor while creating or editing a clip */
+.html5-video-player.carpe-focused {
+    cursor: default !important;
+}
+
+/* Keep captions clear of bottom controls if YouTube enters autohide while creating or editing a clip */
+.html5-video-player.ytp-autohide.carpe-focused .caption-window,
+.html5-video-player.ytp-autohide.carpe-focused .ytp-caption-window-bottom {
+    bottom: var(--carpe-bottom-controls-height) !important;
+}
+
+/* ==========================================================================
+   3. Control Bar Injections
+   ========================================================================== */
+
+#carpe-toggle[hidden],
+#carpe-edit-toggle[hidden],
+#carpe-delete-toggle[hidden],
+#carpe-title[hidden],
+#carpe-save-button[hidden],
+#carpe-cancel-button[hidden],
+#carpe-time-display[hidden] {
+    display: none !important;
+}
+
+#carpe-time-display {
+    display: inline-block !important;
+}
+
+/* Single background pill for both timestamps - matching official YouTube Delhi */
+#carpe-time-display .ytp-time-wrapper {
+    box-sizing: border-box;
+    padding: 4px;
+    height: var(--carpe-pill-height);
+    border-radius: 28px;
+    -webkit-backdrop-filter: var(--carpe-backdrop-filter);
+    backdrop-filter: var(--carpe-backdrop-filter);
+    background: var(--carpe-overlay-background);
+    text-shadow: var(--carpe-shadow);
+}
+
+#carpe-time-display .ytp-time-contents {
+    height: 100%;
+    display: flex;
+}
+
+/* Precision anchor timestamp buttons */
+#carpe-time-display .carpe-time-button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+    margin: auto;
+    border-radius: 28px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background 0.12s ease;
+    height: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-variant-numeric: tabular-nums;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    text-shadow: inherit;
+    padding: 0 8px;
+}
+
+#carpe-time-display .carpe-time-frame {
+    opacity: 0.65;
+    font-size: 0.85em;
+}
+
+/* Inactive button hover */
+#carpe-time-display .carpe-time-button:hover,
+#carpe-time-display .carpe-time-button:focus-visible {
+    background: var(--carpe-overlay-button);
+}
+
+/* Active anchor button */
+#carpe-time-display .carpe-time-button.active,
+#carpe-time-display .carpe-time-button[aria-pressed="true"] {
+    background: var(--carpe-overlay-button);
+}
+
+/* Active anchor button hovered */
+#carpe-time-display .carpe-time-button.active:hover,
+#carpe-time-display .carpe-time-button.active:focus-visible {
+    background: var(--carpe-overlay-tonal-hover);
+}
+
+/* Separator between timestamps */
+#carpe-time-display .carpe-time-separator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    cursor: default !important;
+    pointer-events: none;
+    user-select: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-shadow: inherit;
+}
+
+#carpe-title {
+    appearance: none;
+    box-sizing: border-box;
+    width: 148px;
+    height: calc(var(--carpe-pill-height) - 8px);
+    padding: 0 9px;
+    border: none;
+    background: var(--carpe-overlay-button);
+    color: #fff;
+    text-shadow: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: normal;
+    outline: none;
+    pointer-events: auto;
+    transition:
+        border-color 0.12s ease,
+        background 0.12s ease;
+    border-radius: 100vh;
+    margin: auto 4px auto 0px;
+}
+
+#carpe-title::placeholder {
+    color: inherit;
+    opacity: 0.7;
+}
+
+#carpe-title:focus {
+    background: var(--carpe-overlay-tonal-hover);
+}
+
+/* ==========================================================================
+   4. Overlay Containers, Timeline Range, Clip Shelf & Toast
+   ========================================================================== */
+
+#carpe-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    pointer-events: none;
+}
+
+#carpe-range-wrap {
+    pointer-events: none !important;
+    position: absolute;
+    left: 0;
+    right: auto;
+    display: none;
+    z-index: 1;
+    direction: ltr;
+    user-select: none;
+}
+
+#carpe-range-wrap.visible {
+    display: block;
+}
+
+#carpe-range-selection {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 0;
+    pointer-events: none !important;
+    user-select: none;
+}
+
+#carpe-pseudo-timeline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 0;
+    background: rgba(155, 155, 155, 0.85);
+    pointer-events: none !important;
+    user-select: none;
+}
+
+#carpe-pseudo-timeline-progress {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    background: #ff0033;
+    transform: scaleX(0);
+    transform-origin: left center;
+    pointer-events: none !important;
+    user-select: none;
+}
+
+#carpe-range-connector {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    background: rgba(200, 200, 200, 0.22);
+    pointer-events: none !important;
+    user-select: none;
+}
+
+#carpe-video-clips {
+    position: absolute;
+    top: 12px;
+    left: -12px;
+    width: max-content;
+    max-width: calc(100% + 24px);
+    padding-right: 12px;
+    padding-left: 12px;
+    z-index: 100;
+    display: flex;
+    gap: 4px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    pointer-events: auto;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+}
+
+#carpe-video-clips[hidden] {
+    display: none !important;
+}
+
+#carpe-video-clips > .carpe-video-clip {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    flex: 0 0 144px;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    box-sizing: border-box;
+    height: var(--carpe-pill-height);
+    margin: 0;
+    padding: 0 16px;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    border-radius: 8px;
+    -webkit-backdrop-filter: var(--carpe-backdrop-filter);
+    backdrop-filter: var(--carpe-backdrop-filter);
+    background: var(--carpe-overlay-background);
+    color: #fff;
+    font-family: inherit;
+    line-height: normal;
+    text-shadow: var(--carpe-shadow);
+    text-align: start;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.12s ease;
+}
+
+#carpe-video-clips > .carpe-video-clip:hover,
+#carpe-video-clips > .carpe-video-clip:focus-visible,
+#carpe-video-clips > .carpe-video-clip.active {
+    background: var(--carpe-overlay-button);
+}
+
+#carpe-video-clips > .carpe-video-clip.active:hover,
+#carpe-video-clips > .carpe-video-clip.active:focus-visible {
+    background: var(--carpe-overlay-tonal-hover);
+}
+
+.carpe-video-clip-title {
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.carpe-video-clip-time {
+    opacity: 0.7;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+}
+
+.carpe-video-clip-sync-alert {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+    color: #fff;
+}
+
+.carpe-video-clip-sync-alert svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.carpe-video-clip-track,
+.carpe-video-clip-progress {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+}
+
+.carpe-video-clip-track {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.carpe-video-clip-progress {
+    background: #ff0033;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.08s linear;
+}
+
+#carpe-toast {
+    position: absolute;
+    left: 50%;
+    bottom: calc(var(--carpe-bottom-controls-height) + 1.5rem);
+    width: max-content;
+    max-width: calc(100% - 24px);
+    transform: translateX(-50%);
+    z-index: 200;
+    -webkit-backdrop-filter: var(--carpe-backdrop-filter);
+    backdrop-filter: var(--carpe-backdrop-filter);
+    background: var(--carpe-overlay-background);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 100vh;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    pointer-events: none;
+}
+
+#carpe-toast.visible {
+    opacity: 1;
+}
